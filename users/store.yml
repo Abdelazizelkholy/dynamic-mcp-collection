@@ -1,0 +1,42 @@
+info:
+  name: store
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base_url}}users"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: multipart-form
+    data:
+      - name: name
+        type: text
+        value: abdelaziz
+      - name: email
+        type: text
+        value: abdelaziz0777@gmail.com
+      - name: phone
+        type: text
+        value: "01123456654"
+      - name: password
+        type: text
+        value: "12345678"
+      - name: profile_picture
+        type: file
+        value:
+          - /home/abd-el-aziz/الصور/Screenshots/Screenshot from 2025-12-31 22-15-00.png
+      - name: roles[]
+        type: text
+        value: admin
+  auth:
+    type: bearer
+    token: 13|L9anCETLDQ6RHfBZ7XPeBC6HmN0kfWS1znCeEAoY33ddb606
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
