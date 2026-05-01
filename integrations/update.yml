@@ -1,0 +1,45 @@
+info:
+  name: update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{base_url}}integrations/2"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: multipart-form
+    data:
+      - name: name
+        type: text
+        value: salla
+      - name: base_api_url
+        type: text
+        value: https://api.nexus.com
+      - name: documentation_url
+        type: text
+        value: https://api.nexus.com
+      - name: description_en
+        type: text
+        value: "salla description en "
+      - name: description_ar
+        type: text
+        value: salla description ar
+      - name: publish
+        type: text
+        value: "1"
+      - name: integration_media
+        type: file
+        value:
+          - /home/abd-el-aziz/الصور/Screenshots/Screenshot from 2025-12-31 22-15-00.png
+  auth:
+    type: bearer
+    token: 13|L9anCETLDQ6RHfBZ7XPeBC6HmN0kfWS1znCeEAoY33ddb606
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
