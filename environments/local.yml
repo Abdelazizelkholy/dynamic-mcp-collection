@@ -1,0 +1,6 @@
+name: local
+variables:
+  - name: base_url
+    value: https://www.vjncode.com/api/
+  - secret: true
+    name: token
