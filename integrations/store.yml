@@ -36,7 +36,7 @@ http:
           - /home/abd-el-aziz/الصور/Screenshots/Screenshot from 2025-12-31 22-15-00.png
   auth:
     type: bearer
-    token: 13|L9anCETLDQ6RHfBZ7XPeBC6HmN0kfWS1znCeEAoY33ddb606
+    token: "{{token}}"
 
 settings:
   encodeUrl: true

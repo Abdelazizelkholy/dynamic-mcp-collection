@@ -39,7 +39,7 @@ http:
         value: put
   auth:
     type: bearer
-    token: 13|L9anCETLDQ6RHfBZ7XPeBC6HmN0kfWS1znCeEAoY33ddb606
+    token: "{{token}}"
 
 settings:
   encodeUrl: true
