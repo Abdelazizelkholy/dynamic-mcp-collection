@@ -1,0 +1,32 @@
+info:
+  name: Store
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base_url}}integrations/1/headers"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "type": "bearer",
+          "header_key": "Authorization",
+          "require_from": "user_integration",
+          "value": "access_token",
+          "label": "Bearer Token",
+          "description": "OAuth2 access token from login step",
+          "is_active": true
+      }
+  auth:
+    type: bearer
+    token: 13|L9anCETLDQ6RHfBZ7XPeBC6HmN0kfWS1znCeEAoY33ddb606
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
