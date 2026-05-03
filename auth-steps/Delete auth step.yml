@@ -1,19 +1,20 @@
 info:
-  name: delete
+  name: Delete auth step
   type: http
-  seq: 4
+  seq: 7
 
 http:
   method: DELETE
-  url: "{{base_url}}integrations/2"
+  url: "{{base_url}}integrations/1/auth-steps/3"
   headers:
     - name: Accept
       value: application/json
   body:
-    type: multipart-form
+    type: json
+    data: ""
   auth:
     type: bearer
-    token: "{{token}}"
+    token: 13|L9anCETLDQ6RHfBZ7XPeBC6HmN0kfWS1znCeEAoY33ddb606
 
 settings:
   encodeUrl: true

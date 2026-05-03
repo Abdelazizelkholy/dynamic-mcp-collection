@@ -1,0 +1,64 @@
+info:
+  name: Create — login_callback (e.g. Salla OAuth)
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base_url}}integrations/1/auth-steps"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Obtain Access Token",
+        "step_type": "login_callback",
+        "auth_type": "oauth2",
+        "http_method": "POST",
+        "base_endpoint_url": "https://accounts.salla.sa/oauth2/token",
+        "inputs": [
+          {
+            "key": "client_id",
+            "label": "Client ID",
+            "type": "text",
+            "required": true,
+            "placeholder": "Enter client ID"
+          },
+          {
+            "key": "client_secret",
+            "label": "Client Secret",
+            "type": "password",
+            "required": true,
+            "placeholder": "Enter client secret"
+          },
+          {
+            "key": "redirect_uri",
+            "label": "Redirect URI",
+            "type": "url",
+            "required": true,
+            "placeholder": "https://yourapp.com/callback"
+          }
+        ],
+        "outputs": [
+          "access_token",
+          "refresh_token",
+          "expires_in"
+        ],
+        "response_example": {
+          "access_token": "eyJ...",
+          "refresh_token": "def...",
+          "expires_in": 3600
+        },
+        "is_active": true
+      }
+  auth:
+    type: bearer
+    token: 13|L9anCETLDQ6RHfBZ7XPeBC6HmN0kfWS1znCeEAoY33ddb606
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

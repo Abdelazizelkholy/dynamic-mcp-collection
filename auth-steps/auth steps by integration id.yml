@@ -1,17 +1,17 @@
 info:
-  name: index
+  name: "auth steps by integration id "
   type: http
   seq: 5
 
 http:
   method: GET
-  url: "{{base_url}}integrations"
+  url: "{{base_url}}integrations/1/auth-steps"
   headers:
     - name: Accept
       value: application/json
   auth:
     type: bearer
-    token: "{{token}}"
+    token: 13|L9anCETLDQ6RHfBZ7XPeBC6HmN0kfWS1znCeEAoY33ddb606
 
 settings:
   encodeUrl: true

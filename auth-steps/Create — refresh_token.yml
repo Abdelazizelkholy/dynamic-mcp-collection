@@ -1,0 +1,47 @@
+info:
+  name: Create — refresh_token
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{base_url}}integrations/1/auth-steps"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Refresh Token Rotation",
+        "step_type": "refresh_token",
+        "auth_type": "oauth2",
+        "http_method": "POST",
+        "base_endpoint_url": "https://accounts.salla.sa/oauth2/token",
+        "inputs": [
+          {
+            "key": "refresh_token",
+            "label": "Refresh Token",
+            "type": "hidden",
+            "required": true
+          }
+        ],
+        "outputs": [
+          "access_token",
+          "expires_in"
+        ],
+        "response_example": {
+          "access_token": "eyJ...",
+          "expires_in": 3600
+        },
+        "is_active": true
+      }
+  auth:
+    type: bearer
+    token: 13|L9anCETLDQ6RHfBZ7XPeBC6HmN0kfWS1znCeEAoY33ddb606
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
