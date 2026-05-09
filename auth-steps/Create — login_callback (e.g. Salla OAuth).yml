@@ -24,21 +24,25 @@ http:
             "label": "Client ID",
             "type": "text",
             "required": true,
-            "placeholder": "Enter client ID"
+            "placeholder": "Enter client ID",
+            "require_from" : "previous_step_response",
+            "value" : "token"
           },
           {
             "key": "client_secret",
             "label": "Client Secret",
             "type": "password",
             "required": true,
-            "placeholder": "Enter client secret"
+            "placeholder": "Enter client secret",
+            "require_from" : "user"
           },
           {
             "key": "redirect_uri",
             "label": "Redirect URI",
             "type": "url",
             "required": true,
-            "placeholder": "https://yourapp.com/callback"
+            "placeholder": "https://yourapp.com/callback",
+            "require_from" : "user"
           }
         ],
         "outputs": [
@@ -55,7 +59,7 @@ http:
       }
   auth:
     type: bearer
-    token: 13|L9anCETLDQ6RHfBZ7XPeBC6HmN0kfWS1znCeEAoY33ddb606
+    token: "{{token}}"
 
 settings:
   encodeUrl: true
