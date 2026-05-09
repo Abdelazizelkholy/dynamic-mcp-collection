@@ -1,0 +1,22 @@
+info:
+  name: chnage status (publish / un-publish)
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: "{{base_url}}integrations/1/change-status"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: multipart-form
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
