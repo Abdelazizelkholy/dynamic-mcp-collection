@@ -1,0 +1,58 @@
+info:
+  name: Create service
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base_url}}integrations/1/services"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: multipart-form
+    data:
+      - name: service_name
+        type: text
+        value: Get Orders
+      - name: http_method
+        type: text
+        value: GET
+      - name: content_type
+        type: text
+        value: application/json
+      - name: endpoint_path
+        type: text
+        value: /orders
+      - name: description_en
+        type: text
+        value: Fetch all orders
+      - name: description_ar
+        type: text
+        value: جلب جميع الطلبات
+      - name: is_enabled
+        type: text
+        value: "1"
+      - name: inherit_global_headers
+        type: text
+        value: "1"
+      - name: long_term_execution
+        type: text
+        value: "1"
+      - name: dependency_service_ids[]
+        type: text
+        value: ""
+        disabled: true
+      - name: logo
+        type: file
+        value: []
+        disabled: true
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
