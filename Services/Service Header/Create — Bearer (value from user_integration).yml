@@ -1,0 +1,29 @@
+info:
+  name: Create — Bearer (value from user_integration)
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base_url}}integrations/1/services/2/headers"
+  body:
+    type: json
+    data: |-
+      {
+          "type": "bearer",
+          "header_key": "Authorization",
+          "require_from": "user_integration",
+          "value": "access_token",
+          "label": "Bearer Token",
+          "description": "OAuth2 access token",
+          "is_active": true
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
