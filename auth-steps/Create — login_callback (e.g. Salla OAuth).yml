@@ -22,27 +22,23 @@ http:
           {
             "key": "client_id",
             "label": "Client ID",
-            "type": "text",
-            "required": true,
-            "placeholder": "Enter client ID",
+            "type": "body",
             "require_from" : "previous_step_response",
             "value" : "token"
           },
           {
             "key": "client_secret",
             "label": "Client Secret",
-            "type": "password",
-            "required": true,
-            "placeholder": "Enter client secret",
-            "require_from" : "user"
+            "type": "params",
+            "require_from" : "user",
+            "value" : ""
           },
           {
             "key": "redirect_uri",
             "label": "Redirect URI",
-            "type": "url",
-            "required": true,
-            "placeholder": "https://yourapp.com/callback",
-            "require_from" : "user"
+            "type": "headers",
+            "require_from" : "user",
+            "value" : ""
           }
         ],
         "outputs": [
