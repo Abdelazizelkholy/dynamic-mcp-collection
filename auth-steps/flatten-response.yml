@@ -1,11 +1,11 @@
 info:
-  name: "auth steps by integration id "
+  name: flatten-response
   type: http
-  seq: 5
+  seq: 9
 
 http:
   method: GET
-  url: "{{base_url}}integrations/1/auth-steps"
+  url: "{{base_url}}integrations/1/auth-steps/1/flatten-response"
   headers:
     - name: Accept
       value: application/json
