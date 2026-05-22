@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{base_url}}integrations/1/auth-steps/1/flatten-response"
+  url: "{{base_url}}integrations/8/auth-steps/7/flatten-response"
   headers:
     - name: Accept
       value: application/json
