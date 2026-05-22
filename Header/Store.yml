@@ -13,17 +13,32 @@ http:
     type: json
     data: |-
       {
-          "type": "bearer",
-          "header_key": "Authorization",
-          "require_from": "user_integration",
-          "value": "access_token",
-          "label": "Bearer Token",
-          "description": "OAuth2 access token from login step",
-          "is_active": true
+        "headers": [
+          {
+            "type": "normal",
+            "header_key": "X-Api-Key",
+            "concatenate_key": "Bearer",
+            "require_from": "admin",
+            "value": "my-api-key",
+            "label": "API Key",
+            "description": "Static API key",
+            "is_active": true
+          },
+          {
+            "type": "bearer",
+            "header_key": "Authorization",
+            "concatenate_key": null,
+            "require_from": "user_integration",
+            "value": "access_token",
+            "label": "Bearer Token",
+            "description": "OAuth2 token",
+            "is_active": true
+          }
+        ]
       }
   auth:
     type: bearer
-    token: 13|L9anCETLDQ6RHfBZ7XPeBC6HmN0kfWS1znCeEAoY33ddb606
+    token: "{{token}}"
 
 settings:
   encodeUrl: true
