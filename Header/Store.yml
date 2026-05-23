@@ -1,7 +1,7 @@
 info:
   name: Store
   type: http
-  seq: 3
+  seq: 1
 
 http:
   method: POST
@@ -15,25 +15,23 @@ http:
       {
         "headers": [
           {
-            "type": "normal",
-            "header_key": "X-Api-Key",
-            "concatenate_key": "Bearer",
-            "require_from": "admin",
-            "value": "my-api-key",
-            "label": "API Key",
-            "description": "Static API key",
-            "is_active": true
-          },
-          {
-            "type": "bearer",
-            "header_key": "Authorization",
-            "concatenate_key": null,
-            "require_from": "user_integration",
-            "value": "access_token",
-            "label": "Bearer Token",
-            "description": "OAuth2 token",
-            "is_active": true
-          }
+                  "type": "basic_auth",
+                  "header_key": "Authorization",
+                  "require_from": "admin",
+                  "value": "my_username",
+                  "label": "username",
+                  "description": "Basic auth username",
+                  "is_active": true
+              },
+              {
+                  "type": "basic_auth",
+                  "header_key": "Authorization",
+                  "require_from": "admin",
+                  "value": "my_password",
+                  "label": "password",
+                  "description": "Basic auth password",
+                  "is_active": true
+              }
         ]
       }
   auth:

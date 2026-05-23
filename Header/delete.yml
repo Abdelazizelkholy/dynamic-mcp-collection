@@ -1,11 +1,11 @@
 info:
   name: delete
   type: http
-  seq: 6
+  seq: 2
 
 http:
   method: DELETE
-  url: "{{base_url}}integrations/1/headers/2"
+  url: "{{base_url}}integrations/1/headers/15"
   headers:
     - name: Accept
       value: application/json
@@ -14,7 +14,7 @@ http:
     data: ""
   auth:
     type: bearer
-    token: 13|L9anCETLDQ6RHfBZ7XPeBC6HmN0kfWS1znCeEAoY33ddb606
+    token: "{{token}}"
 
 settings:
   encodeUrl: true
