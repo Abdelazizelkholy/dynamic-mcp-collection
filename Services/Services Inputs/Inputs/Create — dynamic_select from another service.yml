@@ -1,0 +1,32 @@
+info:
+  name: Create — dynamic_select from another service
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{base_url}}integrations/1/services/1/inputs"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "field_type": "dynamic_select",
+          "key": "category_id",
+          "placeholder": "Select category",
+          "key_type": "body",
+          "validation": "required",
+          "require_from": "user",
+          "dynamic_service_id": 1
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

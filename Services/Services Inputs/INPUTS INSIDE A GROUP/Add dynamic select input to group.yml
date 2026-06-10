@@ -1,0 +1,32 @@
+info:
+  name: Add dynamic select input to group
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base_url}}integrations/1/services/1/input-groups/2/inputs"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "field_type": "dynamic_select",
+          "key": "product_id",
+          "placeholder": "Select product",
+          "key_type": "body",
+          "validation": "required",
+          "require_from": "user",
+          "dynamic_service_id": 1
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

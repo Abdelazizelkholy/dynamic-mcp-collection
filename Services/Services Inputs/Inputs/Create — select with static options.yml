@@ -1,0 +1,32 @@
+info:
+  name: Create — select with static options
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base_url}}integrations/1/services/1/inputs"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "field_type": "select",
+          "key": "payment_method",
+          "placeholder": "Select payment method",
+          "key_type": "body",
+          "validation": "required",
+          "require_from": "user",
+          "options": ["cash", "card", "bank_transfer"]
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

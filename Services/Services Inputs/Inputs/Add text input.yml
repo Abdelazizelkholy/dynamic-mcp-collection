@@ -1,0 +1,32 @@
+info:
+  name: Add text input
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base_url}}integrations/1/services/1/inputs"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "field_type": "input",
+          "key": "customer_name",
+          "placeholder": "Enter customer name",
+          "type": "text",
+          "key_type": "body",
+          "validation": "required",
+          "require_from": "user"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

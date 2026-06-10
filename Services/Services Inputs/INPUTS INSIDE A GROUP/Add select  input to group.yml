@@ -1,0 +1,32 @@
+info:
+  name: Add select  input to group
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}integrations/1/services/1/input-groups/2/inputs"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |
+      {
+          "field_type": "select",
+          "key": "status",
+          "placeholder": "Select status",
+          "key_type": "body",
+          "validation": "required",
+          "require_from": "user",
+          "options": ["pending", "active", "cancelled"]
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

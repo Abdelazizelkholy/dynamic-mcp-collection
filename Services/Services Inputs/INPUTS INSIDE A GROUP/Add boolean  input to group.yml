@@ -1,0 +1,31 @@
+info:
+  name: Add boolean  input to group
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base_url}}integrations/1/services/1/input-groups/2/inputs"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |
+      {
+          "field_type": "boolean",
+          "key": "is_active",
+          "placeholder": null,
+          "key_type": "body",
+          "validation": "sometimes",
+          "require_from": "user"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

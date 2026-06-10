@@ -1,0 +1,27 @@
+info:
+  name: Update Group
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{base_url}}integrations/1/services/1/input-groups/1"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "key_name": "order_items",
+          "data_type": "array_of_objects"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
