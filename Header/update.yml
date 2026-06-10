@@ -18,7 +18,7 @@ http:
                   "type": "basic_auth",
                   "header_key": "Authorization",
                   "require_from": "admin",
-                  "value": "my_username",
+                  "value": "my_username 1",
                   "label": "username",
                   "description": "Basic auth username",
                   "is_active": true
@@ -27,7 +27,7 @@ http:
                   "type": "basic_auth",
                   "header_key": "Authorization",
                   "require_from": "admin",
-                  "value": "my_password",
+                  "value": "my_password 2",
                   "label": "password",
                   "description": "Basic auth password",
                   "is_active": true

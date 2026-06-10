@@ -5,18 +5,23 @@ info:
 
 http:
   method: POST
-  url: "{{base_url}}integrations/1/services/3/headers"
+  url: "{{base_url}}integrations/1/services/1/headers"
   body:
     type: json
     data: |-
       {
-          "type": "normal",
-          "header_key": "X-Api-Version",
-          "require_from": "admin",
-          "value": "2024-01",
-          "label": "API Version",
-          "description": "Fixed API version",
-          "is_active": true
+        "headers": [
+          {
+            "type": "normal",
+            "header_key": "X-Store-Id",
+            "concatenate_key": null,
+            "require_from": "user_integration",
+            "value": "store_id",
+            "label": "Store ID",
+            "description": "Store identifier",
+            "is_active": true
+          }
+        ]
       }
   auth:
     type: bearer

@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{base_url}}integrations/1/services/2/headers"
+  url: "{{base_url}}integrations/1/services/1/headers"
   auth:
     type: bearer
     token: "{{token}}"

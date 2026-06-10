@@ -15,13 +15,6 @@ http:
       {
           "body": [
               {
-                  "key": "store_id",
-                  "require_from": "user_integration",
-                  "value": "store_id",
-                  "label": "Store ID",
-                  "description": "Resolved from user integration"
-              },
-              {
                   "key": "version",
                   "require_from": "admin",
                   "value": "2024-01",

@@ -5,14 +5,10 @@ info:
 
 http:
   method: DELETE
-  url: "{{base_url}}integrations/1/services/2/headers/3"
+  url: "{{base_url}}integrations/1/services/1/headers/1"
   body:
     type: json
-    data: |-
-      {
-          "label": "Updated Label",
-          "is_active": false
-      }
+    data: ""
   auth:
     type: bearer
     token: "{{token}}"

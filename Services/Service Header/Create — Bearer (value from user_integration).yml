@@ -5,18 +5,23 @@ info:
 
 http:
   method: POST
-  url: "{{base_url}}integrations/1/services/2/headers"
+  url: "{{base_url}}integrations/1/services/1/headers"
   body:
     type: json
     data: |-
       {
-          "type": "bearer",
-          "header_key": "Authorization",
-          "require_from": "user_integration",
-          "value": "access_token",
-          "label": "Bearer Token",
-          "description": "OAuth2 access token",
-          "is_active": true
+        "headers": [
+          {
+            "type": "bearer",
+            "header_key": "Authorization",
+            "concatenate_key": null,
+            "require_from": "user_integration",
+            "value": "access_token",
+            "label": "Bearer Token",
+            "description": "OAuth2 access token",
+            "is_active": true
+          }
+        ]
       }
   auth:
     type: bearer
