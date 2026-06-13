@@ -1,0 +1,73 @@
+info:
+  name: update
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{base_url}}integrations/1/services/1/input-groups/with-inputs"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "groups": [
+              {
+                  "id": 1,
+                  "key_name": "order_updated",
+                  "data_type": "object",
+                  "inputs": [
+                      {
+                          "id": 1,
+                          "key": "order_number_updated",
+                          "validation": "nullable"
+                      },
+                      {
+                          "field_type": "input",
+                          "key": "new_field",
+                          "type": "input",
+                          "key_type": "body",
+                          "validation": "required",
+                          "require_from": "user"
+                      },
+                      {
+                          "field_type": "group",
+                          "key": "items_nested",
+                          "key_type": "body",
+                          "validation": "required",
+                          "require_from": "user",
+                          "group": {
+                              "id": 2,
+                              "key_name": "items_updated",
+                              "data_type": "array_of_objects",
+                              "inputs": [
+                                  {
+                                      "id": 3,
+                                      "placeholder": "Updated product placeholder"
+                                  },
+                                  {
+                                      "field_type": "input",
+                                      "key": "price",
+                                      "type": "input",
+                                      "key_type": "body",
+                                      "validation": "required",
+                                      "require_from": "user"
+                                  }
+                              ]
+                          }
+                      }
+                  ]
+              }
+          ]
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
