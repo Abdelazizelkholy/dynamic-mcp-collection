@@ -1,7 +1,0 @@
-info:
-  name: INPUTS INSIDE A GROUP
-  type: folder
-  seq: 2
-
-request:
-  auth: inherit

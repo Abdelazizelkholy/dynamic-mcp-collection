@@ -1,0 +1,80 @@
+info:
+  name: store
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base_url}}integrations/1/services/1/inputs"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "inputs": [
+              {
+                  "field_type": "input",
+                  "key": "customer_name",
+                  "placeholder": "Enter customer name",
+                  "type": "input",
+                  "key_type": "body",
+                  "validation": "required",
+                  "require_from": "user",
+                  "label": "Customer Name"
+              },
+              {
+                  "field_type": "select",
+                  "key": "payment_method",
+                  "placeholder": "Select payment",
+                  "type": "params",
+                  "key_type": "body",
+                  "validation": "required",
+                  "require_from": "user",
+                  "options": ["cash", "card", "bank_transfer"]
+              },
+              {
+                  "field_type": "boolean",
+                  "key": "send_notification",
+                  "key_type": "body",
+                  "validation": "nullable",
+                  "require_from": "user"
+              },
+              {
+                  "field_type": "date",
+                  "key": "delivery_date",
+                  "placeholder": "Select date",
+                  "key_type": "body",
+                  "validation": "required",
+                  "require_from": "user",
+                  "date_format": "Y-m-d"
+              },
+              {
+                  "field_type": "datetime",
+                  "key": "scheduled_at",
+                  "placeholder": "Select date & time",
+                  "key_type": "body",
+                  "validation": "nullable",
+                  "require_from": "user",
+                  "date_format": "Y-m-d H:i:s"
+              },
+              {
+                  "field_type": "file",
+                  "key": "invoice",
+                  "placeholder": "Upload invoice",
+                  "key_type": "body",
+                  "validation": "nullable",
+                  "require_from": "user"
+              }
+          ]
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

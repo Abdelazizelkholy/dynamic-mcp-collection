@@ -1,0 +1,37 @@
+info:
+  name: update
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{base_url}}integrations/1/services/1/inputs"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "inputs": [
+              {
+                  "id": 1,
+                  "placeholder": "Updated placeholder",
+                  "validation": "nullable"
+              },
+              {
+                  "id": 2,
+                  "require_from": "admin",
+                  "key": "updated_key"
+              }
+          ]
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

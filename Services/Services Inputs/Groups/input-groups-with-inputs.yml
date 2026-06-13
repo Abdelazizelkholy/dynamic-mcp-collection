@@ -1,0 +1,82 @@
+info:
+  name: input-groups/with-inputs
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}integrations/1/services/1/input-groups/with-inputs"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "groups": [
+          {
+            "key_name": "order",
+            "data_type": "object",
+            "inputs": [
+              {
+                "field_type": "input",
+                "key": "order_number",
+                "placeholder": "Enter order number",
+                "type": "input",
+                "key_type": "body",
+                "validation": "required",
+                "require_from": "user"
+              },
+              {
+                "field_type": "date",
+                "key": "order_date",
+                "placeholder": "Select order date",
+                "key_type": "body",
+                "validation": "required",
+                "require_from": "user",
+                "date_format": "Y-m-d"
+              },
+              {
+                "field_type": "group",
+                "key": "items_group",
+                "key_type": "body",
+                "validation": "required",
+                "require_from": "user",
+                "group": {
+                  "key_name": "items",
+                  "data_type": "array_of_objects",
+                  "inputs": [
+                    {
+                      "field_type": "input",
+                      "key": "product_id",
+                      "placeholder": "Product ID",
+                      "type": "input",
+                      "key_type": "body",
+                      "validation": "required",
+                      "require_from": "user"
+                    },
+                    {
+                      "field_type": "input",
+                      "key": "quantity",
+                      "placeholder": "Quantity",
+                      "type": "input",
+                      "key_type": "body",
+                      "validation": "required",
+                      "require_from": "user"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
