@@ -11,7 +11,7 @@ http:
       value: application/json
   body:
     type: json
-    data: |-
+    data: |
       {
         "groups": [
           {
@@ -37,11 +37,6 @@ http:
                 "date_format": "Y-m-d"
               },
               {
-                "field_type": "group",
-                "key": "items_group",
-                "key_type": "body",
-                "validation": "required",
-                "require_from": "user",
                 "group": {
                   "key_name": "items",
                   "data_type": "array_of_objects",
