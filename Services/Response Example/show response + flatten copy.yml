@@ -1,0 +1,23 @@
+info:
+  name: show response + flatten copy
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base_url}}integrations/1/services/1/response"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

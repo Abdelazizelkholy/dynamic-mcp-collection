@@ -1,0 +1,40 @@
+info:
+  name: store response json copy
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{base_url}}integrations/1/services/1/response"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "response_example": {
+          "success": true,
+          "code": 200,
+          "message": "تمت العملية بنجاح",
+          "data": [
+            {
+              "id": 1,
+              "name": "الموارد البشرية"
+            },
+            {
+              "id": 2,
+              "name": "تقنية المعلومات"
+            }
+          ]
+        }
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

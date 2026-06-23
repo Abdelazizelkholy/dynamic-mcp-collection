@@ -1,0 +1,32 @@
+info:
+  name: update filter key
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{base_url}}integrations/1/services/1/response/filter-keys"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "output_filter_keys": [
+              { "key": "success",     "is_used": false },
+              { "key": "code",        "is_used": false },
+              { "key": "message",     "is_used": false },
+              { "key": "data.*.id",   "is_used": true },
+              { "key": "data.*.name", "is_used": true }
+          ]
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
