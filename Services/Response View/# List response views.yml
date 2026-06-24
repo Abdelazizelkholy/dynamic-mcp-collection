@@ -1,11 +1,11 @@
 info:
-  name: flatten
+  name: "# List response views"
   type: http
-  seq: 4
+  seq: 5
 
 http:
   method: GET
-  url: "{{base_url}}integrations/1/services/1/response/flatten"
+  url: "{{base_url}}integrations/1/services/1/response-view"
   headers:
     - name: Accept
       value: application/json

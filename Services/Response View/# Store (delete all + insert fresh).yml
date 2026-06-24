@@ -1,0 +1,39 @@
+info:
+  name: "# Store (delete all + insert fresh)"
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base_url}}integrations/1/services/1/response-view"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "views": [
+              {
+                  "key": "data.*.id",
+                  "data_type": "text"
+              },
+              {
+                  "key": "data.*.name",
+                  "data_type": "text"
+              },
+              {
+                  "key": "data.*.avatar",
+                  "data_type": "file"
+              }
+          ]
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
