@@ -1,0 +1,7 @@
+info:
+  name: Account Setting
+  type: folder
+  seq: 9
+
+request:
+  auth: inherit

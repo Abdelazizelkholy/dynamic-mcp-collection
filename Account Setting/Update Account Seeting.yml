@@ -1,0 +1,47 @@
+info:
+  name: Update Account Seeting
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{base_url}}integrations/1/account-settings"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "base_url": "https://eimara-backend-staging.wakeb.tech/profile",
+        "http_method": "GET",
+        "email_key": "data.email",
+        "response_example": {
+          "success": true,
+          "code": 200,
+          "message": "تم جلب البيانات بنجاح",
+          "data": {
+            "id": 1,
+            "email": "test@example.com",
+            "file_number": "EPD-2000-2603",
+            "national_id": "1016831263",
+            "name": "Test",
+            "birthdate": {
+              "timestamp": 1063572676,
+              "string": "2003-09-14 20:51:16",
+              "human": "منذ 22 سنة",
+              "date": "2003-09-14",
+              "time": "8:51PM"
+            }
+          }
+        }
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
