@@ -41,11 +41,11 @@ http:
         disabled: true
       - name: is_enabled
         type: text
-        value: "1"
+        value: "0"
         disabled: true
       - name: inherit_global_headers
         type: text
-        value: "1"
+        value: "0"
         disabled: true
       - name: long_term_execution
         type: text
@@ -53,7 +53,7 @@ http:
         disabled: true
       - name: dependency_service_ids[]
         type: text
-        value: ""
+        value: "1"
         disabled: true
       - name: logo
         type: file

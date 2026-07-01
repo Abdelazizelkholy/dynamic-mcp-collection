@@ -1,7 +1,7 @@
 info:
   name: Create service params
   type: http
-  seq: 3
+  seq: 2
 
 http:
   method: POST
@@ -13,8 +13,16 @@ http:
     type: json
     data: |-
       {
-          "type": "static",
-          "value": "test"
+        "params": [
+          {
+            "type": "static",
+            "value": "test"
+          },
+          {
+            "type": "user_integration",
+            "value": "Authorization"
+          }
+        ]
       }
   auth:
     type: bearer

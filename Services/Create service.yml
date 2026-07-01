@@ -44,8 +44,7 @@ http:
         value: "1"
       - name: dependency_service_ids[]
         type: text
-        value: ""
-        disabled: true
+        value: "1"
       - name: logo
         type: file
         value: []
