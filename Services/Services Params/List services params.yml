@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{base_url}}integrations/1/services/1/params"
+  url: "{{base_url}}integrations/1/services/2/params"
   headers:
     - name: Accept
       value: application/json
