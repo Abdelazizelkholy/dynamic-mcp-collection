@@ -1,0 +1,41 @@
+info:
+  name: login
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{base_url}}user-integrations/2/connect"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: multipart-form
+    data:
+      - name: client_id
+        type: text
+        value: 2ad26416-3738-4548-ad0b-77020091f24d
+      - name: client_secret
+        type: text
+        value: 0d68179187f1ef132ab58b82a2fb419c7be77d2cbe17fc8391738ecf78e0c6ae
+      - name: redirect_uri
+        type: text
+        value: https://www.vjncode.com/callback
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        const body = typeof res.body === "string" ? JSON.parse(res.body) : res.body;
+        if (res.status === 200 && body && body.data && body.data.token) {
+          bru.setEnvVar("token", body.data.token, { persist: true });
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

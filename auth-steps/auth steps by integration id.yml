@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{base_url}}integrations/8/auth-steps"
+  url: "{{base_url}}integrations/2/auth-steps"
   headers:
     - name: Accept
       value: application/json

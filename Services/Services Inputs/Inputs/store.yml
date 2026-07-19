@@ -13,61 +13,83 @@ http:
     type: json
     data: |-
       {
-          "inputs": [
-              {
-                  "field_type": "input",
-                  "key": "customer_name",
-                  "placeholder": "Enter customer name",
-                  "type": "input",
-                  "key_type": "body",
-                  "validation": "required",
-                  "require_from": "user",
-                  "label": "Customer Name"
-              },
-              {
-                  "field_type": "select",
-                  "key": "payment_method",
-                  "placeholder": "Select payment",
-                  "type": "params",
-                  "key_type": "body",
-                  "validation": "required",
-                  "require_from": "user",
-                  "options": ["cash", "card", "bank_transfer"]
-              },
-              {
-                  "field_type": "boolean",
-                  "key": "send_notification",
-                  "key_type": "body",
-                  "validation": "nullable",
-                  "require_from": "user"
-              },
-              {
-                  "field_type": "date",
-                  "key": "delivery_date",
-                  "placeholder": "Select date",
-                  "key_type": "body",
-                  "validation": "required",
-                  "require_from": "user",
-                  "date_format": "Y-m-d"
-              },
-              {
-                  "field_type": "datetime",
-                  "key": "scheduled_at",
-                  "placeholder": "Select date & time",
-                  "key_type": "body",
-                  "validation": "nullable",
-                  "require_from": "user",
-                  "date_format": "Y-m-d H:i:s"
-              },
-              {
-                  "field_type": "file",
-                  "key": "invoice",
-                  "placeholder": "Upload invoice",
-                  "key_type": "body",
-                  "validation": "nullable",
-                  "require_from": "user"
-              }
-          ]
+        "inputs": [
+          {
+            "field_type": "input",
+            "key": "customer_name",
+            "placeholder": "Enter customer name",
+            "type": "input",
+            "key_type": "body",
+            "validation": "required",
+            "require_from": "user",
+            "label": "Customer Name"
+          },
+          {
+            "field_type": "select",
+            "key": "payment_method",
+            "placeholder": "Select payment",
+            "type": "params",
+            "key_type": "body",
+            "validation": "required",
+            "require_from": "user",
+            "options": [
+              "cash",
+              "card",
+              "bank_transfer"
+            ]
+          },
+          {
+            "field_type": "boolean",
+            "key": "send_notification",
+            "type": "input",
+            "key_type": "body",
+            "validation": "nullable",
+            "require_from": "user"
+          },
+          {
+            "field_type": "date",
+            "key": "delivery_date",
+            "type": "input",
+            "placeholder": "Select date",
+            "key_type": "body",
+            "validation": "required",
+            "require_from": "user",
+            "date_format": "Y-m-d"
+          },
+          {
+            "field_type": "datetime",
+            "key": "scheduled_at",
+            "type": "input",
+            "placeholder": "Select date & time",
+            "key_type": "body",
+            "validation": "nullable",
+            "require_from": "user",
+            "date_format": "Y-m-d H:i:s"
+          },
+          {
+            "field_type": "file",
+            "key": "invoice",
+            "type": "input",
+            "placeholder": "Upload invoice",
+            "key_type": "body",
+            "validation": "nullable",
+            "require_from": "user"
+          },
+          {
+            "field_type": "dynamic_select",
+            "key": "product_id",
+            "type": "input",
+            "placeholder": "Select product",
+            "key_type": "body",
+            "validation": "required",
+            "require_from": "user",
+            "dynamic_service_id": 2,
+            "filling_data": [
+              2,
+              3
+            ]
+          }
+        ]
       }
   auth:
     type: bearer

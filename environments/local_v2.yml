@@ -1,0 +1,6 @@
+name: local_v2
+variables:
+  - name: base_url
+    value: http://127.0.0.1:8000/api/
+  - name: token
+    value: 2|lXt2rfeVQLVwxixf9Di6UjWAW8lnzn8MNyUcK7RZf64aa199

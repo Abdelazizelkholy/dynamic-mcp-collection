@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: "{{base_url}}integrations/1/auth-steps"
+  url: "{{base_url}}integrations/2/auth-steps"
   headers:
     - name: Accept
       value: application/json
@@ -15,7 +15,7 @@ http:
       {
         "name": "Obtain Access Token",
         "step_type": "login_callback",
-        "auth_type": "oauth2",
+        "auth_type": "call",
         "http_method": "POST",
         "base_endpoint_url": "https://accounts.salla.sa/oauth2/token",
         "inputs": [
