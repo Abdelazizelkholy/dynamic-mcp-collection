@@ -1,0 +1,28 @@
+info:
+  name: import collection
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{base_url}}integrations/1/import-postman"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - C:\Users\kayan\Downloads\Facflow-API.postman_collection.json
+        contentType: application/json; charset=utf-8
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
