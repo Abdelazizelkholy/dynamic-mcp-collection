@@ -1,0 +1,33 @@
+info:
+  name: delete
+  type: http
+  seq: 3
+
+http:
+  method: DELETE
+  url: "{{base_url}}user-integrations/1"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  body:
+    type: multipart-form
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        const body = typeof res.body === "string" ? JSON.parse(res.body) : res.body;
+        if (res.status === 200 && body && body.data && body.data.token) {
+          bru.setEnvVar("token", body.data.token, { persist: true });
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
