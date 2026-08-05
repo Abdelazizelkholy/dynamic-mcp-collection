@@ -5,13 +5,13 @@ info:
 
 http:
   method: GET
-  url: "{{base_url}}user-integrations/2/callback?code=ory_ac_0dah8ZI5GzL3na7p3IANjk_NS5qbDI-KR5guCmnM-os.j2N8rLgAc3mwJc-dBZ5QJ3hIjkNEWqV0s9kchGR9FNQ&state=YBjUZOVgqNVsLVuipNJKsbQO2NcspKsYhIaM2l0r"
+  url: "{{base_url}}user-integrations/2/callback?code=ory_ac_ASDrkaL2inLt6bzCcufRKdA-7BzNoT-5MZBMAhP3pu0.e8J-IC1El-BMEcDr7l_eliQodnaceiLVdDQM9xehaeg&state=WYbqSxzaxUlwADF9j641MNYohXsG9aFrEjVAfgPs"
   params:
     - name: code
-      value: ory_ac_0dah8ZI5GzL3na7p3IANjk_NS5qbDI-KR5guCmnM-os.j2N8rLgAc3mwJc-dBZ5QJ3hIjkNEWqV0s9kchGR9FNQ
+      value: ory_ac_ASDrkaL2inLt6bzCcufRKdA-7BzNoT-5MZBMAhP3pu0.e8J-IC1El-BMEcDr7l_eliQodnaceiLVdDQM9xehaeg
       type: query
     - name: state
-      value: YBjUZOVgqNVsLVuipNJKsbQO2NcspKsYhIaM2l0r
+      value: WYbqSxzaxUlwADF9j641MNYohXsG9aFrEjVAfgPs
       type: query
   auth: inherit
 

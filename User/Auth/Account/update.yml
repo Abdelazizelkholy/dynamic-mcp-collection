@@ -5,15 +5,15 @@ info:
 
 http:
   method: PUT
-  url: "{{base_url}}user-integrations/1?email=abdelaziz@gmail.com"
+  url: "{{base_url}}user-integrations/4?name=abdelaziz"
   headers:
     - name: Accept
       value: application/json
     - name: Content-Type
       value: application/json
   params:
-    - name: email
-      value: abdelaziz@gmail.com
+    - name: name
+      value: abdelaziz
       type: query
   body:
     type: multipart-form
